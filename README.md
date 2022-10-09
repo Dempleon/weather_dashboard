@@ -1,2 +1,2 @@
 # weather_dashboard
-a weather viewer application
+a weather dashboard application
