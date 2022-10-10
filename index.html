@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+
+    <header class="navbar navbar-light bg-secondary">
+        <span class="navbar-brand">Weather</span>
+    </header>
+
+    <main class="row">
+        <div class="col-12 col-md-2 bg-dark text-white p-3" id="sidebar">
+            <h3 class="">Search Cities</h3>
+            <form id="searchForm" class="card-body">
+                <input type="text" id="city" class="form-input" placeholder="Enter City">
+                <button  class="btn bg-light" id="search-btn">Search</button>
+            </form>
+            <ul class="nav nav-pills flex-coulumn mb-auto" id="prevSearch">
+                
+            </ul>
+    
+        </div>
+        <div class="col-12 col-md-10">
+            <div class="">
+                <h1 id="cityName">City Name and Date</h1>
+                <p>Temp: in fahrenheight</p>
+                <p>wind speed</p>
+                <p>humidity</p>
+            </div>
+            <h3 class="">5-Day Forcast:</h3>
+            <div class="row" id="weatherCards">
+                
+
+                <div class="card flex-coulumn weather-cards">
+                    <h3>Date</h3>
+                    <span>image weather</span>
+                    <p>temp</p>
+                    <p>windspeed</p>
+                    <p>humidity</p>
+                </div>
+                <div class="card flex-coulumn weather-cards">
+                    <h3>Date</h3>
+                    <span>image weather</span>
+                    <p>temp</p>
+                    <p>windspeed</p>
+                    <p>humidity</p>
+                </div>
+                <div class="card flex-coulumn weather-cards">
+                    <h3>Date</h3>
+                    <span>image weather</span>
+                    <p>temp</p>
+                    <p>windspeed</p>
+                    <p>humidity</p>
+                </div>
+                <div class="card flex-coulumn weather-cards">
+                    <h3>Date</h3>
+                    <span>image weather</span>
+                    <p>temp</p>
+                    <p>windspeed</p>
+                    <p>humidity</p>
+                </div>
+                <div class="card flex-coulumn weather-cards">
+                    <h3>Date</h3>
+                    <span>image weather</span>
+                    <p>temp</p>
+                    <p>windspeed</p>
+                    <p>humidity</p>
+                </div>
+
+                
+
+
+            </div>
+            
+        </div>
+    
+    </main>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
