@@ -1,11 +1,11 @@
 $('#search-btn').on('click', function (event) {
     event.preventDefault();
     let cityName = $('#city').val();
-    getWeather(cityName)
+    getLatLon(cityName)
 });
 
-var getWeather = function (cityName) {
-    var geoUrl = 'http://api.openweathermap.org/geo/1.0/direct?q='+ cityName + '&appid=efe86d861872cbdd30489c657b7913a3'
+var getLatLon = function (cityName) {
+    var geoUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=efe86d861872cbdd30489c657b7913a3'
     var lat;
     var lon;
     console.log(geoUrl);
@@ -14,7 +14,11 @@ var getWeather = function (cityName) {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
-                    console.log(typeof(data));
+                    console.log(typeof (data));
+                    lat = data[0].lat
+                    lon = data[0].lon
+                    console.log('lat: ' + lat + ', lon: ' + lon);
+                    getWeather(lat, lon)
                 });
             } else {
                 console.log('error: ' + response.statusText);
@@ -24,14 +28,36 @@ var getWeather = function (cityName) {
             console.log('unable to connect to api link')
         });
 
-    var apiUrl = 'api.openweathermap.org/data/2.5/forecast?lat='+lat+'&lon='+lon+'&appid={API key}'
 
+
+    // var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=efe86d861872cbdd30489c657b7913a3';
+    // console.log(apiUrl);
+    // fetch(apiUrl)
+    //     .then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (data) {
+    //                 console.log(data);
+    //                 console.log(typeof (data));
+    //             });
+    //         } else {
+    //             console.log('error: ' + response.statusText);
+    //         }
+    //     })
+    //     .catch(function (error) {
+    //         console.log('unable to connect to api link')
+    //     });
+}
+
+function getWeather(lat, lon) {
+
+    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&units=imperial&appid=efe86d861872cbdd30489c657b7913a3';
+    console.log(apiUrl);
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
-                    console.log(typeof(data));
+                    console.log(data.list);
                 });
             } else {
                 console.log('error: ' + response.statusText);
