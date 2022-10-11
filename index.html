@@ -20,7 +20,7 @@
 <body>
 
     <header class="navbar navbar-light bg-secondary">
-        <span class="navbar-brand">Weather</span>
+        <span class="navbar-brand" id="navbar">Weather Dashboard</span>
     </header>
 
     <main class="row">
@@ -30,23 +30,23 @@
                 <input type="text" id="city" class="form-input" placeholder="Enter City">
                 <button  class="btn bg-light" id="search-btn">Search</button>
             </form>
-            <ul class="nav nav-pills flex-coulumn mb-auto" id="prevSearch">
+            <ul class="nav nav-pills flex-column mb-auto" id="prevSearch">
                 
             </ul>
     
         </div>
         <div class="col-12 col-md-10">
             <div class="">
-                <h1 id="cityName">City Name and Date</h1>
-                <p id="currentTemp">Temp: in fahrenheight</p>
-                <p id="currentWindSpeed">wind speed</p>
-                <p id="currentHumidity">humidity</p>
+                <h1 id="cityName"></h1>
+                <p id="currentTemp"></p>
+                <p id="currentWindSpeed"></p>
+                <p id="currentHumidity"></p>
             </div>
-            <h3 class="">5-Day Forcast:</h3>
+            <h3 class="">5-Day Forecast:</h3>
             <div class="row" id="weatherCards">
                 
 
-                <div class="card flex-coulumn weather-cards">
+                <div class="card flex-coulumn weather-cards p-2">
                     <h3>Date</h3>
                     <span>image weather</span>
                     <p>temp</p>

@@ -36,3 +36,7 @@ h3 {
 .weather-cards {
     width: 20%;
 }
+
+#navbar {
+    font-size: 6vh;
+}

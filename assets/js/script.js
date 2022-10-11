@@ -81,11 +81,21 @@ async function getCurrent(lat, lon) {
 function displayCurrent(data) {
     var currentDate = moment().format('dddd, MMMM Do YYYY')
     console.log(data);
-    $('#cityName').text(data.name + ' ' + currentDate)
+    $('#cityName').text(data.name + ' ' + currentDate);
+    $('#currentTemp').text('Current Temperature: ' + data.main.temp + 'F');
+    $('#currentWindSpeed').text('Current Wind speed: ' + data.wind.speed + 'mph');
+    $('#currentHumidity').text('Current Humidity: ' + data.main.humidity + '%');
+
 }
 
 function displayForecast(data) {
+    var days = [][];
     console.log(data);
+    for(var i = 0; i < data.length; i++) {
+        for(var j = 0; j < 8; j++) {
+            days.push()
+        }
+    }
 }
 
 
