@@ -8,6 +8,10 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
 
 
     <title>Weather Dashboard</title>
@@ -34,9 +38,9 @@
         <div class="col-12 col-md-10">
             <div class="">
                 <h1 id="cityName">City Name and Date</h1>
-                <p>Temp: in fahrenheight</p>
-                <p>wind speed</p>
-                <p>humidity</p>
+                <p id="currentTemp">Temp: in fahrenheight</p>
+                <p id="currentWindSpeed">wind speed</p>
+                <p id="currentHumidity">humidity</p>
             </div>
             <h3 class="">5-Day Forcast:</h3>
             <div class="row" id="weatherCards">
