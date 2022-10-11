@@ -78,9 +78,9 @@ async function getCurrent(lat, lon) {
 
 // function to dynamically update/display the current day weather
 function displayCurrent(data) {
-    var currentDate = moment().format('dddd, MMMM Do YYYY')
+    var currentDate = moment().format('dddd, MMMM DD, YYYY')
     console.log(data);
-    $('#cityName').text(data.name + ' ' + currentDate);
+    $('#cityName').text(data.name + ', ' + currentDate);
     $('#currentTemp').text('Current Temperature: ' + data.main.temp + 'F');
     $('#currentWindSpeed').text('Current Wind speed: ' + data.wind.speed + 'mph');
     $('#currentHumidity').text('Current Humidity: ' + data.main.humidity + '%');
