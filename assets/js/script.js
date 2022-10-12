@@ -1,4 +1,16 @@
 var prevSearch = [];
+prevSearch = JSON.parse(localStorage.getItem('cities'));
+console.log(prevSearch);
+if (prevSearch === null) {
+    prevSearch = [];
+    localStorage.setItem('cities', JSON.stringify(prevSearch));
+} else {
+    for ( var i = 0; i < prevSearch.length; i++) {
+        addPrevSearch(prevSearch[i]);
+    }
+}
+console.log('prev cities: ' + prevSearch);
+
 // Event handler for search button
 $('#search-btn').on('click', function (event) {
     event.preventDefault();
@@ -8,8 +20,8 @@ $('#search-btn').on('click', function (event) {
     // if (!getCoordinates(cityName)) {
     //     console.log('bad request');
     // }
-    addPrevSearch(cityName);
-
+    
+    
 });
 
 function addPrevSearch(cityName) {
@@ -23,6 +35,7 @@ function addPrevSearch(cityName) {
         getCoordinates(city);
     });
     $('#prevSearch').append(cityBtn);
+
 
 }
 
@@ -39,6 +52,12 @@ function getCoordinates(cityName) {
                     if (data[0].lat) {
                         get5days(data[0].lat, data[0].lon)
                         getCurrent(data[0].lat, data[0].lon)
+                        if(!prevSearch.includes(cityName)) {
+                            prevSearch.push(cityName);
+                            localStorage.setItem('cities', JSON.stringify(prevSearch));
+                            addPrevSearch(cityName);
+                        }
+                        
                     } else {
                         return;
                     }
@@ -185,6 +204,8 @@ function getAvg(arr) {
     }
     return sum / arr.length;
 }
+
+
 
 // $('#cityBtn').on('click', function (event) {
 //     event.preventDefault();
