@@ -13,6 +13,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     width: 95%;
+    height: 100vh;
 }
 
 #sidebar {
@@ -20,7 +21,7 @@ main {
 }
 
 #weatherCards {
-    height: 100%;
+    /* height: 100%; */
 }
 
 form {
@@ -43,4 +44,9 @@ h3 {
 
 #city {
     width:95%;
+}
+
+#cityBtn {
+    margin: 5px;
+    margin-left: 10px;
 }
