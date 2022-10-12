@@ -1,15 +1,14 @@
+// check local storage for saved cities and dynamically build the buttons
 var prevSearch = [];
 prevSearch = JSON.parse(localStorage.getItem('cities'));
-console.log(prevSearch);
 if (prevSearch === null) {
     prevSearch = [];
     localStorage.setItem('cities', JSON.stringify(prevSearch));
 } else {
-    for ( var i = 0; i < prevSearch.length; i++) {
+    for (var i = 0; i < prevSearch.length; i++) {
         addPrevSearch(prevSearch[i]);
     }
 }
-console.log('prev cities: ' + prevSearch);
 
 // Event handler for search button
 $('#search-btn').on('click', function (event) {
@@ -20,10 +19,11 @@ $('#search-btn').on('click', function (event) {
     // if (!getCoordinates(cityName)) {
     //     console.log('bad request');
     // }
-    
-    
+
+
 });
 
+// function to dynamically build buttons for previously searched cities
 function addPrevSearch(cityName) {
     var cityBtn = $('<button>');
     cityBtn.text(cityName);
@@ -52,12 +52,12 @@ function getCoordinates(cityName) {
                     if (data[0].lat) {
                         get5days(data[0].lat, data[0].lon)
                         getCurrent(data[0].lat, data[0].lon)
-                        if(!prevSearch.includes(cityName)) {
+                        if (!prevSearch.includes(cityName)) {
                             prevSearch.push(cityName);
                             localStorage.setItem('cities', JSON.stringify(prevSearch));
                             addPrevSearch(cityName);
                         }
-                        
+
                     } else {
                         return;
                     }
@@ -204,16 +204,3 @@ function getAvg(arr) {
     }
     return sum / arr.length;
 }
-
-
-
-// $('#cityBtn').on('click', function (event) {
-//     event.preventDefault();
-//     var city = $(this).text();
-//     console.log('city: ' + city);
-//     getCoordinates(city);
-// });
-
-
-
-
